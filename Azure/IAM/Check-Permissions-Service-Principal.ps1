@@ -1,9 +1,9 @@
 . "$(Join-Path -Path $PSScriptRoot -ChildPath '../Check-Az-Context.ps1')"
 
-$spId = Read-Host "Enter the Service Principal ID (App ID) to check permissions"
+$spId = Read-Host "Enter the Service Principal or User's Object ID to check permissions"
 $logFile = Join-Path -Path $env:USERPROFILE -ChildPath "SP-Permissions-Check.log"
 
-$skipSubscriptions = @("UEFA_Corporate_nonPRD", "UEFA_AMFUnit", "D3 - Service Bus Development", "D3 - Service Bus Production", "Pago por uso", "UEFA_Corporate_PRD", "UEFA_DNS Azure") 
+$skipSubscriptions = @() 
 
 # Clear log file if exists
 if (Test-Path $logFile) { Remove-Item $logFile -Force }
