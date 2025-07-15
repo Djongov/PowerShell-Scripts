@@ -1,3 +1,5 @@
+. "$(Join-Path -Path $PSScriptRoot -ChildPath 'Ensure-AzModule.ps1')"
+
 $context = Get-AzContext
 
 if ($null -eq $context) {
