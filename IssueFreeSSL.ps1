@@ -10,13 +10,13 @@ d                   status          contact                                     
 2243461895           valid           {mailto:djongov@gamerz-bg.com} 
 #>
 #<# ============ First certificate issuance, need to run only once per certificate ==============#>
-$certNames = '*.sunwellsolutions.com', 'sunwellsolutions.com'
-$email = 'djongov@gamerz-bg.com'
-New-PACertificate $certNames -AcceptTOS -Contact $email
-#Output is in %LOCALAPPDATA%\Posh-ACME. There should a folder in there and there should be one or two subfolders. 
-#You will find actual .cer files in one of them. You can directly use .pfx - password is poshacme
-#https://github.com/rmbolger/Posh-ACME
-Invoke-Item $env:USERPROFILE\AppData\Local\Posh-ACME\LE_PROD\2617473177
+# $certNames = '*.sunwellsolutions.com', 'sunwellsolutions.com'
+# $email = 'djongov@gamerz-bg.com'
+# New-PACertificate $certNames -AcceptTOS -Contact $email
+# #Output is in %LOCALAPPDATA%\Posh-ACME. There should a folder in there and there should be one or two subfolders. 
+# #You will find actual .cer files in one of them. You can directly use .pfx - password is poshacme
+# #https://github.com/rmbolger/Posh-ACME
+# Invoke-Item $env:USERPROFILE\AppData\Local\Posh-ACME\LE_PROD\2617473177
 <# ============ Renewal ==============#>
-#Submit-Renewal -MainDomain '*.diablo-2.net' -NoSkipManualDns
-#Invoke-Item $env:USERPROFILE\AppData\Local\Posh-ACME\LE_PROD\2617473177
+Submit-Renewal -MainDomain '*.sunwellsolutions.com' -NoSkipManualDns
+Invoke-Item $env:USERPROFILE\AppData\Local\Posh-ACME\LE_PROD\2617473177
